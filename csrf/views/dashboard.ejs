@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, <%= user.username %></h2>
+    <h3>Balance: $<%= user.balance %></h3>
+    
+    <h3>Transfer Money</h3>
+    <form action="/transfer" method="POST">
+        <input type="number" name="amount" placeholder="Amount">
+        <button type="submit">Transfer</button>
+    </form>
+</body>
+</html>
