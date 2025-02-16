@@ -13,7 +13,7 @@
     <h2>Comments</h2>
     <ul>
         <% comments.forEach(comment => { %>
-            <li><%= comment %></li> <!-- ❌ No Sanitization (XSS Injection) -->
+            <li><%- comment %></li> <!-- ❌ No Sanitization (XSS Injection) -->
         <% }) %>
     </ul>
 
