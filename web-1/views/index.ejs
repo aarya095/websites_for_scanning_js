@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable Site - XSS</title>
+</head>
+<body>
+    <h2>Leave a Comment</h2>
+    <form action="/comment" method="POST">
+        <textarea name="comment"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Comments</h2>
+    <ul>
+        <% comments.forEach(comment => { %>
+            <li><%= comment %></li> <!-- ❌ No Sanitization (XSS Injection) -->
+        <% }) %>
+    </ul>
+
+    <a href="/login">Login</a>
+</body>
+</html>

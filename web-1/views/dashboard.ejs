@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - CSRF Vulnerable</title>
+</head>
+<body>
+    <h2>Welcome, <%= user %>!</h2>
+    <p>This dashboard has CSRF vulnerability because it does not validate requests.</p>
+    
+    <form action="/comment" method="POST">
+        <input type="hidden" name="comment" value="CSRF Attack Successful!">
+        <button type="submit">Submit CSRF Attack</button>
+    </form>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>
